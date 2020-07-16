@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: SplashScreen(),
       routes: {
-        'home':(context)=>Home()
+        'HomePage':(context)=>HomePage()
       },
     );
   }
@@ -31,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void startTimer(){
     Timer(Duration(seconds: 4),() {
-      Navigator.of(context).pushReplacementNamed('home');
+      Navigator.of(context).pushReplacementNamed('HomePage');
     }); // Timer
   }
 
