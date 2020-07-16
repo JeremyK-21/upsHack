@@ -1,145 +1,132 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/painting.dart';
-import 'package:testing_app/map.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:testing_app/main.dart';
+import 'package:testing_app/profile.dart';
+
 
 void main() => runApp(
   MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: HomePage(),
+    home: MyApp(),
   )
 );
+
+
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
+  PageController _controller = PageController(
+    initialPage: 0,
+  );
 }
 
 class _HomePageState extends State<HomePage> {
+  Material myApps(IconData icon, heading, int color) {
+    return Material(
+      color: Colors.grey,
+      shadowColor: Colors.white,
+      borderRadius: BorderRadius.circular(24.0),
+      child: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Padding(
+                      padding: const EdgeInsets.all(8.0),
+                        child: Text(heading,
+                          style: TextStyle(
+                            color: new Color(color),
+                            fontSize: 20.0,
+                          ),
+                        ),
+                  ),
+                  Material(
+                      color: new Color(color),
+                      borderRadius: BorderRadius.circular(24.0),
+                      child: Padding(
+                          padding: const EdgeInsets.all(16.0),
+                          child: Icon(
+                            icon,
+                            color: Colors.white,
+                            size: 30,
+                          )
+                      )
+                  )
+                ],
+          ),
+        ],
+          )
+      )
+    ),
+    );
+  }
+  int _cIndex = 0;
 
-  final List<String>  _listItem = [
-    'assets/images/chatBot.jpeg',
-    'assets/images/medical.jpg',
-    'assets/images/orgChart.png',
-    'assets/images/mood.jpg',
-    'assets/images/activity.jpg',
-    'assets/images/alarm.jpg',
-    'assets/images/calender.png'
-  ];
+  void _incrementTab(index) {
+    setState(() {
+      _cIndex = index;
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.amber[200],
-      appBar: AppBar(
-        backgroundColor: Colors.brown,
-        elevation: 0,
-        leading: Icon(Icons.menu),
-        title: Text("Home"),
-        actions: <Widget>[
-          Padding(
-            padding: EdgeInsets.all(10.0),
-            child: Container(
-              width: 36,
-              height: 30,
-              decoration: BoxDecoration(
-                  color: Colors.grey,
-                  borderRadius: BorderRadius.circular(10)
-              ),
-              child: Center(child: Text("0")),
-            ),
-          )
+    return new Scaffold(
+      appBar: new AppBar(
+          title: Text('UPS Virtual Assistant'),
+      ),
+      body: StaggeredGridView.count(
+          crossAxisCount: 2,
+          crossAxisSpacing: 12.0,
+          mainAxisSpacing: 12.0,
+        padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+        children: <Widget>[
+          myApps(Icons.access_alarm, "Reminders",0xFFFF0000),
+          myApps(Icons.map, "Maps",0xFFFFA500),
+          myApps(Icons.textsms, "Chat Bot",0xFFFFC0CB),
+          myApps(Icons.hearing, "Healthcare",0xFF00FFFF),
+          myApps(Icons.insert_chart, "Organization Chart",0xFFFF00FF)
+        ],
+        staggeredTiles: [
+          StaggeredTile.extent(2, 120.0),
+          StaggeredTile.extent(2, 120.0),
+          StaggeredTile.extent(2, 120.0),
+          StaggeredTile.extent(2, 120.0),
+          StaggeredTile.extent(2, 120.0)
         ],
       ),
-      body: SafeArea(
-        child: Container(
-          padding: EdgeInsets.all(20.0),
-          child: Column(
-            children: <Widget>[
-              Container(
-                height: 250,
-                width: 400,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                    image: DecorationImage(
-                        image: AssetImage('assets/images/gps.jpg'),
-                        fit: BoxFit.cover
-                    )
-                ),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    gradient: LinearGradient(
-                      begin: Alignment.bottomRight,
-                      colors: [
-                        Colors.black.withOpacity(.6),
-                        Colors.black.withOpacity(.3)
-                      ]
-                    )
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Text("Location Services", style: TextStyle(color: Colors.white, fontSize: 45, fontWeight: FontWeight.bold),),
-                      SizedBox(height: 10,),
-                      Container(
-                        height: 60,
-                        width: 200,
-                        margin: EdgeInsets.symmetric(horizontal: 40),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Colors.white
-                        ),
-                        child: Center(
-                          child: FlatButton(child: Text('Locate'), color: Colors.white,
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => MyApp()),
-                            );
-                          },
-                        ),
-                      ),
-                      ),SizedBox(height: 20,),
-                  ],
-                ),
-              ),
-              ),
-              SizedBox(height: 20,),
-              Expanded(
-                child:GridView.count(
-                  crossAxisCount: 2,
-                  padding: EdgeInsets.all(0),
-                  crossAxisSpacing: 20,
-                  mainAxisSpacing: 20,
-                  children: _listItem.map((item) => Card(
-                    color: Colors.transparent,
-                    elevation: 0,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                          image: DecorationImage(
-                              image: AssetImage(item),
-                              fit: BoxFit.cover
-                          )
-                      ),
-                      child: Transform.translate(
-                          offset: Offset(65, -60),
-                          child: Container(
-                            margin: EdgeInsets.symmetric(horizontal: 70, vertical: 70),
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                color: Colors.white
-                            ),
-                            child: Icon(Icons.add),
-                        ),
-                      ),
-                    ),
-                  )).toList(),
-                ) ,
-              ),
-            ],
+      bottomNavigationBar: BottomNavigationBar(
+
+        type: BottomNavigationBarType.shifting,
+        selectedItemColor: Colors.blueAccent,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home,color: Color.fromARGB(255, 0, 0, 0)),
+            title: Text('Home'),
           ),
-        ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.map,color: Color.fromARGB(255, 0, 0, 0)),
+            title: Text('Maps'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.textsms,color: Color.fromARGB(255, 0, 0, 0)),
+            title: Text('Chat Bot'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.access_alarm,color: Color.fromARGB(255, 0, 0, 0)),
+            title: Text('Reminders'),
+          )
+        ],
+        onTap: (index){
+          _incrementTab(index);
+        },
       ),
     );
   }
