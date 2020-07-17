@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "ups-hackathon-flutter-test",
+  "private_key_id": "0b89c5f5cb0a0c1da10513152ff3c452c9dc6a55",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCqUqBGTdIyv8tZ\neFmi2rrTYzMLI033vaHUlls0sOXpb85ri3a3psnDgQ9iHrdIPdGSo4ySTAp7uoZY\n7V+141F1gGFaFLITHk8p8fXSsLsoLX2a6c2pfiYEflyrcO9IauDpTaqcdtLMjg04\nyvMB4ehNjvovMMg4TWmvRO4D1tYr4hd57rcH9hel57gs1o0P0nck3C8rLEAQwBFW\n+OO/4FmOE1lGnR6vkTzwcMohrr05S9jsNDCk43sUuN0Rp6YL94T80x96bcHUlqb2\nUOiS4EDerHzz8fj+3IzVnqPuYwJ8KYIwhoGFycceatsuLiclPwalN1EFQMzWMfgl\natwXyDmbAgMBAAECggEAB2x3iOjubwDWE62/tm3zM7CAso0U4mX1DkeJbSgCtWSG\nqkBXadTOuYNAEOZG1dK/9jTDtUK0OEVegrTB9bMVQ1pXo+3//v5Us/7UWJ0UY0Fs\nVpq3OJqDfLGnR1+yRkVGTVTxyUUSlhDg+ac65Uub7Pl85R6qs22IXDfUaf1ss1fi\nmbFlip/SzLEhQoJuoABL7FgQrTOUqS71BVIssHv0Ho0va+bF/B1Os65hUDkgcyn/\nMvrY/LYjDyGqMPvkZIh/bfxQAevUh2lDOyv8Cl9k/E9YaZpuxOfW/h6i66lpqVNG\nmucnT3M748miINR+hpdUOOWvEniwDXOEM8ykDCXAmQKBgQDrXkmP13oiDpZ3HqSo\ntKC3v7vRiwGCf8bCRqM8HEI9hTePgTZNWAQ8harhVdJ+hNTfziMG9USm/yVEnq3i\nJT5sdWy3QZDlzFc79Vkgbq7FU8mIwl/CMVzVAhBCq7oVw7kVOnEoPjg/NdBioFMD\n5E4r5DPsPOSZrujpZx/n/uQKWQKBgQC5QLQNx7r4GVzRx46XjscbPjt5VtWokk6+\nTWSqUEIPcUiW52UgCd5kqIOXRwxx8Q2AoA6RGjZljv3moR9fOD4M+CpRQicoubbe\ncL/t7dgwVTgeL28jo3UP+LExmb2kjg3wdnxkj/pEMtoE5w/Y5/YGPojiutlaK6ur\nusRQHH59EwKBgQDZPhvTwmUeTiyfIg+FD8NQFo566DyqgNmps50y/Do/olgYAoFm\nfhja690/QwGYeW4qbI9z+qo1IUb6wSNpmkq1vORteP0Ovb6+vsRW5RI3XBCmRBIy\noXE3wkHT58FIGXEZoOmU5WjxHvCKN8Sn0PA+HtG1+LZfC0w7Mk4GygMdcQJ/KrG+\nzW46qPMvcSmMs2E0ghLVoiFhHHibrUAo8xeMIgL5t82cgMXFe21a5oJ5W8kyU3KP\n6OEhqEZMPdrkYA2WP2byWcflPn2Op7VUhoFKUdlSFaLY+l2xnPyz2bqU+lfC3qhw\nAr0r8IvHs1mNTXAoQ0gmRBrL/PwTlIB2vf/TJwKBgQDb8zPXk4pc0kL4gAKlML+B\niu3P9/x/PctBFfuBEBRtdGj2uh/3J/U4SQlgkmp8xfGMPymC4FS5L6e/iaPIDzG7\n3wJ8upCWVcTqsyskssR5KLKp9bDxKPdwipOhlwQK1nK4QbE153QuLcelQTU4B5G4\n0mam0UsIWaHNTLUD7q0Cww==\n-----END PRIVATE KEY-----\n",
+  "client_email": "app-chatbot-calendar@ups-hackathon-flutter-test.iam.gserviceaccount.com",
+  "client_id": "109603874198469282880",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/app-chatbot-calendar%40ups-hackathon-flutter-test.iam.gserviceaccount.com"
+}

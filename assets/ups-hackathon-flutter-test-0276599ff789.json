@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "ups-hackathon-flutter-test",
+  "private_key_id": "0276599ff78923a24d19d7a6f9116327ed516eda",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDlBAYMG2iMnlaY\niSIZZRmwoDH7zU8cgviPdoS7bIa6Q+csnH0ViPwBqH07LeaDr03SEdVRgfstVMbc\nVQ/YX93dVeEoKgJ0yXrjIn1NFQzgjpVKpCp5ZbhZE/5X+hOUa4gPmku7/hKGCBKl\nsDJFleNVhEo4nh+ZjxDiw9qJ9nKuBMF9DAE4FI1SyzrnZXL1vtnPPokcdwz4w91I\nTmavWIv85QjEzyizR7Yhgp82Z6XVjb0pVhllu88uMvMmPrJkmmIE310TaLo+HTp4\nkGYYjS1jeb7hUrPbTa9BOgSnGA4XR/NCTVT0UOSeDr2k0YPD9WlEebo9yXmLkvTA\nmYNORtLdAgMBAAECggEAAs/WgIDi+xGun9d/MwSfbiBpZ11mopj7vaHc5gLice2y\nLEViRnNqH13BkTUdEXIuPcK49ck8xkULiVpaBB7D4Jsp/+OUKCRD0qodE7yLGJln\nkoUK0yFr7rFk0WZhUH80KneLL9cMxIHbiMFDEhZRtj5rkt+4z5qGwIywZY/rFIvg\ndDLz0FbqQ5BNnRQYrGBmY8xrq2lNsPz6E7MjEtMSEa7iJbHKKhttFb1Jpkrt6tIr\nS2bT74ZIbU6JQLy6A+VsThVv9R++udbeXSJcEx6f5cQ8n7PgepTub5Jyk8PsL2FV\nZd+7XYMHD7YRJyYEaYf2Dv5IlekMAEb4qKBOdjvvQQKBgQD5HWKfx8kHkFHktlGJ\n2xqJCXskdK2f8QSQpF+9lRRntYjEMXKOnauI/RCCfA8Mx6WngncbdX/iEWW94eyX\nADH6gbesDB+ih1RCOWl1GHsBBtX5qBQw2T/mHnSzVN6e4hv3uiLPtQtApqwQbyoN\nU8UhMuqOr0WbvbR5+807fLim6QKBgQDrWG1ac+F+m7Eq6KIYCfgPztZwX8nsaEAg\nhW2sFY3hBD9DwWgZlkVDCqngM7FmOw45ofQzRkaL5BPewDD+IwyAslKFlQ9zQnko\nLfRKPw2bln/NTXI0mUEAVS5B+4e2sZz+ipBbR9fN8D1I7PUEeWbrtxj0WZumPOj/\nq0BgCaJ71QKBgQCjHyzPd6EZhNU7MG9gF8reZQjvrD9s9gOJOzk+CPqdlm+CGObs\noC4Mu7kt2FJ6idjdQT8BCgW9YKsAlYm4rvYLFRnSXPXyFS+FVdbKSEdzOqium/Ls\nsbV32AWO0EoeO+0YYBgfbmt54CnXcRNWOr5gqNiSqg6olqYxIkMXaun20QKBgGWH\ne32nOmO1ZSQ+whcezd57+/T0zhboDqo5BcxUbCXkACsJ2BAZzP2ULx8jDegtmABz\nBvfL3IljNtNFFJ2+nxkyVPl+CfFOfxg/YwFY3FUAA1idjaR1bR5ooREkIzNEwpbp\nTkei4c3dU4MPftCUUztjfSeFNOntoxMRXS9RWMCVAoGAd5ieAo3AjuU5w/W/H8cT\nPnHTlMjpVlG8HPftyoy7tW1AmPZ/wrafOMmrDplq9UPw89JeDH18GRW38fRrV6AA\n9uYV2lb09JyIHgJ5qWVAOvsFyTJe9/BGjRDlBIprE7nRVGL7JLky+Rlle5kLaMrE\n2caK0jst1YS2uazWxF0ZMQc=\n-----END PRIVATE KEY-----\n",
+  "client_email": "dialogflow-gavstg@ups-hackathon-flutter-test.iam.gserviceaccount.com",
+  "client_id": "104948162729208454290",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dialogflow-gavstg%40ups-hackathon-flutter-test.iam.gserviceaccount.com"
+}
