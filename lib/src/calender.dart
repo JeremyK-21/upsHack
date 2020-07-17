@@ -1,57 +1,133 @@
 import 'package:flutter/material.dart';
-import 'package:testing_app/map.dart';
-import 'package:testing_app/home.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:testing_app/main.dart';
 import 'package:testing_app/profile.dart';
 
-void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+void main() => runApp(MyDashBoard());
+
+class MyDashBoard extends StatefulWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primaryColor: Colors.black,
+  _MyDashBoardState createState() => _MyDashBoardState();
+}
+
+class _MyDashBoardState extends State<MyDashBoard> {
+  Material myApps(IconData icon, heading, int color) {
+    return Material(
+      color: Colors.grey,
+      shadowColor: Colors.white,
+      borderRadius: BorderRadius.circular(24.0),
+      child: Center(
+          child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(heading,
+                          style: TextStyle(
+                            color: new Color(color),
+                            fontSize: 20.0,
+                          ),
+                        ),
+                      ),
+                      Material(
+                          color: new Color(color),
+                          borderRadius: BorderRadius.circular(24.0),
+                          child: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: Icon(
+                                icon,
+                                color: Colors.white,
+                                size: 30,
+                              )
+                          )
+                      )
+                    ],
+                  ),
+                ],
+              )
+          )
       ),
-      home: MyHomePage(),
     );
   }
-}
+  int _cIndex = 0;
 
-class MyHomePage extends StatefulWidget {
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-
-  List<Widget> pages=[MyApp(),Profile()];
+  void _incrementTab(index) {
+    setState(() {
+      _cIndex = index;
+    });
+  }
 
   @override
+
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(,
-          color: Colors.white,
-        ),
-        title: Text("Booking",
-          style: TextStyle(
-            color: Colors.white,
-          ),),
-        actions: <Widget>[
-          IconButton(icon: Icon(
-              FontAwesomeIcons.luggageCart, color: Colors.white),
-              onPressed: () {
-                //
-              }),
+    return new Scaffold(
+      appBar: new AppBar(title: Text('UPS Virtual Assistant'),
+          actions:
+          [
+            IconButton(icon: Icon(Icons.arrow_back_ios), onPressed: null,),
+            IconButton(icon: Icon(Icons.arrow_forward_ios), onPressed: null,),
+          ]
+      ),
+      body: StaggeredGridView.count(
+        crossAxisCount: 2,
+        crossAxisSpacing: 12.0,
+        mainAxisSpacing: 12.0,
+        padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+
+        children: <Widget>[
+          myApps(Icons.access_alarm, "Reminders",0xFFFF0000),
+          myApps(Icons.map, "Maps",0xFFFFA500),
+          myApps(Icons.textsms, "Chat Bot",0xFFFFC0CB),
+          myApps(Icons.hearing, "Healthcare",0xFF00FFFF),
+          myApps(Icons.insert_chart, "Organization Chart",0xFFFF00FF)
+        ],
+        staggeredTiles: [
+          StaggeredTile.extent(2, 120.0),
+          StaggeredTile.extent(2, 120.0),
+          StaggeredTile.extent(2, 120.0),
+          StaggeredTile.extent(2, 120.0),
+          StaggeredTile.extent(2, 120.0)
         ],
       ),
-      body: PageView.builder(
-        itemCount: pages.length,
-        itemBuilder: (context, position) => pages[position],
+
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.shifting,
+        selectedItemColor: Colors.blueAccent,
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home,color: Color.fromARGB(255, 0, 0, 0)),
+            title: Text('Home'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.map,color: Color.fromARGB(255, 0, 0, 0)),
+            title: Text('Maps'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.textsms,color: Color.fromARGB(255, 0, 0, 0)),
+            title: Text('Chat Bot'),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.access_alarm,color: Color.fromARGB(255, 0, 0, 0)),
+            title: Text('Reminders'),
+          )
+        ],
+        onTap: (index){
+          _incrementTab(index);
+        },
       ),
     );
   }
+
 }
+
+
+
+
